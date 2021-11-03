@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/devices"
+        xmlns:tns="http://www.example.com/devices"
+        elementFormDefault="qualified">
+    <element name="devices">
+        <complexType>
+            <sequence>
+                <element ref="tns:device" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="device">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="origin" type="tns:origin" />
+            <element name="purchase-date" type="gYearMonth" />
+            <element name="group" type="tns:deviceGroup" />
+            <element name="price" type="tns:price" />
+            <element name="critical" type="boolean" />
+        </sequence>
+        <attribute name="id" type="tns:deviceId" use="required" />
+        <attribute name="vendor-site" type="" use="optional" default="https://device-support.com" />
+    </complexType>
+
+    <complexType name="embeddedDevice">
+        <complexContent>
+            <extension base="tns:device">
+                <sequence>
+                    <element name="type" type="tns:embeddedDeviceType" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="portableDevice">
+        <complexContent>
+            <extension base="tns:device">
+                <sequence>
+                    <element name="rechargeable" type="boolean" />
+                    <element name="protective-case" type="boolean" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="deviceId">
+        <restriction base="ID">
+            <pattern value="\w{4}-\d{6}-\d{2}" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="origin">
+        <restriction base="string">
+            <enumeration value="Belarus" />
+            <enumeration value="Ukraine" />
+            <enumeration value="Japan" />
+            <enumeration value="China" />
+            <enumeration value="USA" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="deviceGroup">
+        <restriction base="string">
+            <enumeration value="input" />
+            <enumeration value="output" />
+            <enumeration value="multimedia" />
+            <enumeration value="others" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="embeddedDeviceType">
+        <restriction base="string">
+            <enumeration value="RAM" />
+            <enumeration value="CPU" />
+            <enumeration value="Motherboard" />
+            <enumeration value="Memory drive" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="price">
+        <restriction base="decimal">
+            <minInclusive value="0.10" />
+            <maxInclusive value="9999999.99" />
+        </restriction>
+    </simpleType>
+
+    <element name="device" type="tns:device" abstract="true" />
+    <element name="embedded-device" type="tns:embeddedDevice" substitutionGroup="tns:device" />
+    <element name="portable-device" type="tns:portableDevice" substitutionGroup="tns:device" />
+</schema>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/devices"
+          xsi:schemaLocation="http://www.example.com/devices ../schema/devices-schema.xsd">
+
+    <portable-device id="sn11-555555-01">
+        <name>Logitech keyboard</name>
+        <origin>China</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>input</group>
+        <price>15.45</price>
+        <critical>false</critical>
+        <rechargeable>true</rechargeable>
+        <protective-case>false</protective-case>
+    </portable-device>
+
+    <portable-device id="sn11-555555-02">
+        <name>Logitech mouse</name>
+        <origin>China</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>input</group>
+        <price>5.67</price>
+        <critical>false</critical>
+        <rechargeable>true</rechargeable>
+        <protective-case>false</protective-case>
+    </portable-device>
+
+    <portable-device id="sn55-433421-11">
+        <name>Apple trackpad</name>
+        <origin>USA</origin>
+        <purchase-date>2021-10</purchase-date>
+        <group>input</group>
+        <price>100.12</price>
+        <critical>false</critical>
+        <rechargeable>false</rechargeable>
+        <protective-case>true</protective-case>
+    </portable-device>
+
+    <portable-device id="sn21-211233-14">
+        <name>JBL soundbar</name>
+        <origin>USA</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>output</group>
+        <price>65.43</price>
+        <critical>false</critical>
+        <rechargeable>true</rechargeable>
+        <protective-case>false</protective-case>
+    </portable-device>
+
+    <portable-device id="sn13-211233-14">
+        <name>Unknown portable device</name>
+        <origin>USA</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>output</group>
+        <price>13.23</price>
+        <critical>true</critical>
+        <rechargeable>false</rechargeable>
+        <protective-case>true</protective-case>
+    </portable-device>
+
+    <portable-device id="sn10-211233-14">
+        <name>Unknown portable device</name>
+        <origin>Japan</origin>
+        <purchase-date>2020-12</purchase-date>
+        <group>multimedia</group>
+        <price>223.23</price>
+        <critical>false</critical>
+        <rechargeable>false</rechargeable>
+        <protective-case>true</protective-case>
+    </portable-device>
+
+    <portable-device id="sn10-211333-14">
+        <name>Unknown portable device</name>
+        <origin>Belarus</origin>
+        <purchase-date>2010-11</purchase-date>
+        <group>multimedia</group>
+        <price>17.33</price>
+        <critical>false</critical>
+        <rechargeable>true</rechargeable>
+        <protective-case>true</protective-case>
+    </portable-device>
+
+    <portable-device id="sn09-211333-14">
+        <name>Unknown portable device</name>
+        <origin>Ukraine</origin>
+        <purchase-date>2001-01</purchase-date>
+        <group>multimedia</group>
+        <price>5.30</price>
+        <critical>false</critical>
+        <rechargeable>false</rechargeable>
+        <protective-case>false</protective-case>
+    </portable-device>
+
+    <embedded-device id="sn99-123333-12">
+        <name>Gigabyte motherboard</name>
+        <origin>Japan</origin>
+        <purchase-date>2010-03</purchase-date>
+        <group>others</group>
+        <price>243.75</price>
+        <critical>true</critical>
+        <type>Motherboard</type>
+    </embedded-device>
+
+    <embedded-device id="sn99-123333-32">
+        <name>ASUS motherboard</name>
+        <origin>Japan</origin>
+        <purchase-date>2013-04</purchase-date>
+        <group>others</group>
+        <price>313.75</price>
+        <critical>true</critical>
+        <type>Motherboard</type>
+    </embedded-device>
+
+    <embedded-device id="sn99-123333-22">
+        <name>Intel Core I5 cpu</name>
+        <origin>USA</origin>
+        <purchase-date>2020-01</purchase-date>
+        <group>others</group>
+        <price>130.00</price>
+        <critical>true</critical>
+        <type>CPU</type>
+    </embedded-device>
+
+    <embedded-device id="sn53-123333-22">
+        <name>Samsung SSD Drive</name>
+        <origin>Japan</origin>
+        <purchase-date>2021-03</purchase-date>
+        <group>others</group>
+        <price>91.23</price>
+        <critical>true</critical>
+        <type>Memory drive</type>
+    </embedded-device>
+
+    <embedded-device id="sn53-555678-22">
+        <name>LG RAM</name>
+        <origin>Japan</origin>
+        <purchase-date>2021-10</purchase-date>
+        <group>others</group>
+        <price>45.12</price>
+        <critical>true</critical>
+        <type>RAM</type>
+    </embedded-device>
+
+    <embedded-device id="sn89-344344-22">
+        <name>Unknown embedded device</name>
+        <origin>Japan</origin>
+        <purchase-date>2021-10</purchase-date>
+        <group>multimedia</group>
+        <price>100.01</price>
+        <critical>false</critical>
+        <type>Memory drive</type>
+    </embedded-device>
+
+    <embedded-device id="sn89-344344-23">
+        <name>Unknown embedded device</name>
+        <origin>Belarus</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>multimedia</group>
+        <price>32.01</price>
+        <critical>false</critical>
+        <type>Memory drive</type>
+    </embedded-device>
+
+    <embedded-device id="sn53-555678-24">
+        <name>LG bluetooth chip</name>
+        <origin>Japan</origin>
+        <purchase-date>2021-10</purchase-date>
+        <group>others</group>
+        <price>15.12</price>
+        <critical>false</critical>
+        <type>Motherboard</type>
+    </embedded-device>
+
+</devices>
