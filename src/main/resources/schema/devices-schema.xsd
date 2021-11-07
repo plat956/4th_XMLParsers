@@ -21,7 +21,7 @@
             <element name="critical" type="boolean" />
         </sequence>
         <attribute name="id" type="tns:deviceId" use="required" />
-        <attribute name="vendor-site" type="" use="optional" default="https://device-support.com" />
+        <attribute name="vendor-site" type="string" use="optional" default="https://device-support.com" />
     </complexType>
 
     <complexType name="embeddedDevice">

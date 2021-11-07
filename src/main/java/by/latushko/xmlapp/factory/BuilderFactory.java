@@ -7,15 +7,14 @@ import by.latushko.xmlapp.builder.StaxDeviceBuilder;
 import by.latushko.xmlapp.exception.DeviceDataException;
 
 public class BuilderFactory {
-    private enum TypeParser{
+    public enum TypeParser{
         SAX, STAX, DOM
     }
 
     private BuilderFactory(){
     }
 
-    public static AbstractDeviceBuilder createDeviceBuilder(String typeParser) throws DeviceDataException {
-        TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
+    public static AbstractDeviceBuilder createDeviceBuilder(TypeParser type) throws DeviceDataException {
         switch (type){
             case DOM -> {
                 return new DomDeviceBuilder();

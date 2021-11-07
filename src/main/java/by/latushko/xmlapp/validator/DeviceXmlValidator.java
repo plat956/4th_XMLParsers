@@ -18,15 +18,14 @@ public class DeviceXmlValidator {
 
     public static boolean validate(String file) throws DeviceDataException {
         ClassLoader loader = DeviceXmlValidator.class.getClassLoader();
-
-        URL resourceSchema = loader.getResource(SCHEMA_PATH);
-        String schemaPath = new File(resourceSchema.getFile()).getPath();
+        URL resource = loader.getResource(SCHEMA_PATH);
+        File schemaLocation = new File(resource.getFile());
 
         URL resourceFile = loader.getResource(file);
         String filePath = new File(resourceFile.getFile()).getPath();
 
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        File schemaLocation = new File(schemaPath);
+
         try{
             Schema schema = factory.newSchema(schemaLocation);
             Validator validator = schema.newValidator();

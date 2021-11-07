@@ -9,6 +9,7 @@ import by.latushko.xmlapp.entity.type.DeviceOrigin;
 import by.latushko.xmlapp.entity.type.EmbeddedDeviceType;
 import by.latushko.xmlapp.exception.DeviceDataException;
 import by.latushko.xmlapp.exception.DeviceNodeException;
+import by.latushko.xmlapp.validator.DeviceXmlValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,8 +22,10 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.net.URL;
 import java.time.YearMonth;
 import static by.latushko.xmlapp.entity.Device.DEFAULT_VENDOR_SITE;
 
@@ -43,7 +46,10 @@ public class DomDeviceBuilder extends AbstractDeviceBuilder{
     public void buildDevices(String xmlPath) throws DeviceDataException {
         Document doc;
         try {
-            doc = docBuilder.parse(xmlPath);
+            ClassLoader loader = getClass().getClassLoader();
+            URL resource = loader.getResource(xmlPath);
+
+            doc = docBuilder.parse(resource.getFile());
             Element root = doc.getDocumentElement();
 
             iterateDevicesByNodeName(root, DeviceXmlTag.EMBEDDED_DEVICE);

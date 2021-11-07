@@ -10,6 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
+import java.net.URL;
 
 public class SaxDeviceBuilder extends AbstractDeviceBuilder{
     private DeviceHandler handler;
@@ -31,7 +32,10 @@ public class SaxDeviceBuilder extends AbstractDeviceBuilder{
 
     public void buildDevices(String xmlPath) throws DeviceDataException {
         try {
-            reader.parse(xmlPath);
+            ClassLoader loader = getClass().getClassLoader();
+            URL resource = loader.getResource(xmlPath);
+
+            reader.parse(resource.getFile());
         } catch (IOException | SAXException e) {
             throw new DeviceDataException("Building data by SAX parser failed", e);
         }

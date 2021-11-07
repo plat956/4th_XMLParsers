@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/devices"
+          xsi:schemaLocation="http://www.example.com/devices ../schema/devices-schema.xsd">
+
+    <portable-device id="sn11-555555-01">
+        <name>Logitech keyboard</name>
+        <origin>China</origin>
+        <purchase-date>2021-11</purchase-date>
+        <group>input</group>
+        <price>15.45</price>
+        <critical>false</critical>
+        <rechargeable>true</rechargeable>
+        <protective-case>false</protective-case>
+    </portable-device>
+
+    <embedded-device id="sn99-123333-12">
+        <name>Gigabyte motherboard</name>
+        <origin>Japan</origin>
+        <purchase-date>2010-03</purchase-date>
+        <group>others</group>
+        <price>243.75</price>
+        <critical>true</critical>
+        <type>Motherboard</type>
+    </embedded-device>
+
+</devices>

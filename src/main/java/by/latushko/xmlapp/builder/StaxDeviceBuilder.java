@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.net.URL;
 import java.time.YearMonth;
 
 import static by.latushko.xmlapp.entity.Device.DEFAULT_VENDOR_SITE;
@@ -37,7 +38,11 @@ public class StaxDeviceBuilder extends AbstractDeviceBuilder{
     public void buildDevices(String xmlPath) throws DeviceDataException {
         XMLStreamReader reader;
         String name;
-        try(FileInputStream inputStream = new FileInputStream(new File(xmlPath))) {
+
+        ClassLoader loader = getClass().getClassLoader();
+        URL resource = loader.getResource(xmlPath);
+
+        try(FileInputStream inputStream = new FileInputStream(new File(resource.getFile()))) {
             reader = inputFactory.createXMLStreamReader(inputStream);
             while (reader.hasNext()) {
                 int type = reader.next();
